@@ -1,0 +1,4 @@
+term|definition|labels
+Confidentiality|Privacy,only those who need the data can see the data|Threats Attack and Vulnerabilities, test1
+Integrity|Data is not changed in transit or by unauthorized individuals|Threats Attack and Vulnerabilities, test1, test2
+Availability|Those who do need to use data can and easily|Threats Attack and Vulnerabilities
