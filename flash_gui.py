@@ -1,5 +1,6 @@
 import tkinter as tk
 import pandas as pd
+import random
 
 class FlashcardGUI:
     def __init__(self, dataframe, label_array):
@@ -7,9 +8,10 @@ class FlashcardGUI:
         self.current_card = 0
         self.label_array = label_array
         self.label_stat = []
+        self.prev_card = []
 
-        for i in self.label_array:
-            self.label_stat.append(False)
+        self.label_dict = {key: "grey" for key in label_array}
+        print(self.label_dict)
 
         # Create the GUI window
         self.root = tk.Tk()
@@ -25,8 +27,9 @@ class FlashcardGUI:
 
         # show card labels
         for i in self.label_array:
-            index = label_array.index(i)
-            self.button = tk.Button(self.root, text=i, command=lambda index=index: self.toggle_label(index))
+            self.button = tk.Button(self.root, text=i, command=lambda label=i: self.toggle_label(label))
+            self.button.bind('<Enter>', self.enter_button)
+            self.button.bind('<Leave>', self.leave_button)
             self.button.pack(anchor=tk.W)
 
         
@@ -58,28 +61,50 @@ class FlashcardGUI:
         self.answer_label.config(text=answer, state=tk.NORMAL, font=("Arial", 16))
 
     def next_card(self):
-        self.current_card += 1
-
-        if self.current_card >= len(self.dataframe):
-            self.current_card = 0
+        self.inc_card()
 
         self.question_label.config(text=self.get_current_question(), font=("Arial", 16))
         self.answer_label.config(text="", state=tk.DISABLED)
     
+    # Fix later
     def prev_card(self):
-        self.current_card -= 1
-
-        if self.current_card <= 0:
-            self.current_card = len(self.dataframe) - 1
+        print("sgdgsd")
+        self.dec_card()
 
         self.question_label.config(text=self.get_current_question(), font=("Arial", 16))
         self.answer_label.config(text="", state=tk.DISABLED)
 
-    def toggle_label(self, label_val):
-        self.label_stat[label_val] = ~(self.label_stat[label_val])
-        print(self.label_stat[label_val])
-        print("executed")
-        self.button.config(bg="green")
+    def inc_card(self):
+        self.current_card = (random.randint(0,len(self.dataframe) - 1))
+        self.prev_card.append(self.current_card)
+
+    def dec_card(self):
+        if(len(self.prev_card) != 0):
+            self.current_card = self.prev_card.pop()
+            print(self.prev_card)
+        else:
+            print("Test")
+
+
+    def toggle_label(self, label):
+        if(self.label_dict[label] == "grey"):
+            self.label_dict[label] = "blue"
+
+        elif(self.label_dict[label] == "blue"):
+            self.label_dict[label] = "green"
+        
+        elif(self.label_dict[label] == "green"):
+            self.label_dict[label] = "grey"      
+    
+        for button in self.root.winfo_children():
+            if button.cget('text') == label:
+                button.config(bg=self.label_dict[label])
+
+    def enter_button(self, event):
+        pass
+
+    def leave_button(self, event):
+        pass
 
     def run(self):
         self.root.mainloop()

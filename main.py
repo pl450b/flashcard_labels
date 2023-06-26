@@ -17,7 +17,6 @@ if __name__ == "__main__":
         for j in split_labels:
             if j not in label_array:
                 label_array.append(j)
-    print(label_array)
 
     flashcard_gui = FlashcardGUI(main_df, label_array)
     flashcard_gui.run()

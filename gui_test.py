@@ -64,17 +64,3 @@ class FlashcardGUI:
 
     def run(self):
         self.root.mainloop()
-
-
-# Example usage
-flashcards_data = {'Question': ['Question 1', 'Question 2', 'Question 3'],
-                   'Answer': ['Answer 1', 'Answer 2', 'Answer 3']}
-
-csv_file = 'sec_plus_deck.csv'
-flashcards_df = pd.read_csv(csv_file, delimiter='|')
-
-flashcard_gui = FlashcardGUI(flashcards_df)
-
-
-
-flashcard_gui.run()
