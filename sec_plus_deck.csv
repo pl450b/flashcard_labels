@@ -83,8 +83,8 @@ Bluebugging|Exploiting a serial connection to gain full control of transmitted d
 Spoofing|Copying identifing features of a device (IP, MAC, etc) to impersonate victum |Module 1, Attacks|
 Elasticity|Automatically adjusting resource utilization based on performance needs|Module 1, Attacks|
 Scalability |The ability to add/remove hardware/software resources for different usage levels|Module 1, Attacks|
-ARP Poisoning |Non-legit device on network messaging victum’s computer, telling them another device’s IP and their MAC||
-On-path network attack|Also man-in-the-middle, device||
+ARP Poisoning |Non-legit device on network messaging victum’s computer, telling them another device’s IP and their MAC|Module 1, Attacks, Networks|
+On-path network attack|Also man-in-the-middle, device|Module 1, Attacks|
 Physical Layer (Cables, NIC)|OSI Layer 1|Module 1, Networks|
 Data Link Layer (Ethernet, Switches) by MAC|OSI Layer 2|Module 1, Networks|
 Network Layer (IP, Routers) by IP|OSI Layer 3|Module 1, Networks|

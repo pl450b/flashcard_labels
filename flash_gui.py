@@ -17,14 +17,14 @@ class FlashcardGUI:
         
         # Make an array of all the labels in your deck
         self.label_array = []
-        for i in self.full_dataframe["labels"]:
-            split_labels = i.split(",")
+        label_list = self.full_dataframe["labels"]
+        for i in label_list:
+            split_labels = str(i).split(",")
             for j in split_labels:
                 if j not in self.label_array:
                     self.label_array.append(j)
 
         self.label_dict = {key: "grey" for key in self.label_array}
-        print(self.label_dict)
 
         # Create the GUI window
         self.root = tk.Tk()
@@ -44,8 +44,6 @@ class FlashcardGUI:
             self.button.bind('<Enter>', self.enter_button)
             self.button.bind('<Leave>', self.leave_button)
             self.button.pack(anchor=tk.W)
-
-        
 
         # Create a button to show the answer
         self.show_answer_button = tk.Button(self.root, text="Show Answer", command=self.show_answer)
@@ -80,30 +78,25 @@ class FlashcardGUI:
         self.answer_label.config(text=answer, state=tk.NORMAL, font=("Arial", 16))
 
     def next_card(self):
-        self.inc_card()
+        # Increment card
+        if self.current_card >= len(self.deck_dataframe) - 1:
+            self.current_card = 0
+        else:
+            self.current_card += 1
 
         self.question_label.config(text=self.get_current_question(), font=("Arial", 16))
         self.answer_label.config(text="", state=tk.DISABLED)
     
     # Fix later
     def prev_card(self):
-        print("sgdgsd")
-        self.dec_card()
-
-        self.question_label.config(text=self.get_current_question(), font=("Arial", 16))
-        self.answer_label.config(text="", state=tk.DISABLED)
-
-    def inc_card(self):
-        if self.current_card == len(self.deck_dataframe) - 1:
-            self.current_card = 0
-        else:
-            self.current_card += 1
-        
-    def dec_card(self):
+        # Decrement Card
         if self.current_card == 0:
             self.current_card = len(self.deck_dataframe) - 1
         else:
             self.current_card -= 1
+
+        self.question_label.config(text=self.get_current_question(), font=("Arial", 16))
+        self.answer_label.config(text="", state=tk.DISABLED)        
 
     # Runs every time a label is pressed in the GUI. This changes the color of the label and it's 
     # status in the lable dictionary. The current deck dataframe is also updated with each change
@@ -135,7 +128,9 @@ class FlashcardGUI:
         self.deck_dataframe['definition'] = self.full_dataframe.loc[in_deck, 'definition']
         
         # Randomize deck
-        # self.deck_dataframe = self.deck_dataframe.sample(frac=1, replace=False)
+        self.deck_dataframe = self.deck_dataframe.sample(frac=1, replace=False)
+
+        print(self.current_card)
 
     def enter_button(self, event):
         pass
