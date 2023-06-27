@@ -43,8 +43,6 @@ class FlashcardGUI:
         # show card labels
         for i in self.label_array:
             self.button = tk.Button(self.root, text=i, command=lambda label=i: self.toggle_label(label), font=("Arial", 16))
-            self.button.bind('<Enter>', self.enter_button)
-            self.button.bind('<Leave>', self.leave_button)
             self.button.pack(anchor=tk.W)
 
         # Create a button to show the answer
