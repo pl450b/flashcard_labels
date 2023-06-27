@@ -135,14 +135,20 @@ class FlashcardGUI:
         cur_term = self.get_current_answer()
         old_score = self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency']
         new_score = old_score + abs(1-old_score)/2
+        self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency'] = new_score
+        print(new_score)
+        
 
     def dec_score(self):
         cur_term = self.get_current_answer()
         old_score = self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency']
-        new_score = old_score - abs(1-old_score)/2
+        new_score = old_score / 2
+        self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency'] = new_score
+        print(new_score)
+        
 
     def write_csv(self):
-        self.full_dataframe.to_csv(self.csv_filename, index=True, sep='|')
+        self.full_dataframe.to_csv(self.csv_filename, index=False, sep='|')
 
     def key_press(self, event):
         if event.keysym == 'Left':
@@ -152,9 +158,9 @@ class FlashcardGUI:
         elif event.keysym == 'Down':
             self.show_answer()
         elif event.keysym == 'x':
-            self.inc_score()
-        elif event.keysym == 'c':
             self.dec_score()
+        elif event.keysym == 'c':
+            self.inc_score()
         elif event.keysym == 's':
             self.write_csv()
 
