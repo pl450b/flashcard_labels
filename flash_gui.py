@@ -132,18 +132,12 @@ class FlashcardGUI:
         # Randomize deck
         self.deck_dataframe = self.deck_dataframe.sample(frac=1, replace=False)
 
-    def enter_button(self, event):
-        pass
-
-    def leave_button(self, event):
-        pass
-
-    def inc_score(self, event):
+    def inc_score(self):
         cur_term = self.get_current_answer()
         old_score = self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency']
         new_score = old_score + abs(1-old_score)/2
 
-    def dec_score(self, event):
+    def dec_score(self):
         cur_term = self.get_current_answer()
         old_score = self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency']
         new_score = old_score - abs(1-old_score)/2
