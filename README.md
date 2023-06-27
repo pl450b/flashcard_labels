@@ -5,8 +5,8 @@ Once running, click the label buttons on the left side to select the cards you w
 in your current study session. Everytime you select/deselect a label, the current deck is updated and
 randomized.
 ### Keyboard Shortcuts
-Next Card: right arrow
-Previous Card: left arrow
+Next Card: right arrow\
+Previous Card: left arrow\
 Show Answer: Down arrow
 ## Instalation
 1. Clone the direction using ```git clone https://github.com/pl450b/smart_flashcards```
