@@ -14,4 +14,4 @@ are organized as follows:
 - `term`: what you will have to guess
 - `definition`: the text on the "front" side of the flashcard
 - `labels`: a list of labels (seperated by commas) used to organize the deck and select which cards to study
-**Score feature comming soon!**
+*Score feature comming soon!*
