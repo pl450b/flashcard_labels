@@ -12,6 +12,7 @@ class FlashcardGUI:
         # Two working dataframes for this project
         self.full_dataframe = pd.read_csv(file_name, delimiter='|')
         self.deck_dataframe = pd.DataFrame(columns=['term', 'definition'])
+        self.csv_filename = file_name
 
         # Basic variable setup
         self.current_card = 0
@@ -43,8 +44,6 @@ class FlashcardGUI:
         # show card labels
         for i in self.label_array:
             self.button = tk.Button(self.root, text=i, command=lambda label=i: self.toggle_label(label), font=("Arial", 16))
-            self.button.bind('<Enter>', self.enter_button)
-            self.button.bind('<Leave>', self.leave_button)
             self.button.pack(anchor=tk.W)
 
         # Create a button to show the answer
@@ -142,6 +141,9 @@ class FlashcardGUI:
         old_score = self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency']
         new_score = old_score - abs(1-old_score)/2
 
+    def write_csv(self):
+        self.full_dataframe.to_csv(self.csv_filename, index=True, sep='|')
+
     def key_press(self, event):
         if event.keysym == 'Left':
             self.prev_card()
@@ -153,6 +155,8 @@ class FlashcardGUI:
             self.inc_score()
         elif event.keysym == 'c':
             self.dec_score()
+        elif event.keysym == 's':
+            self.write_csv()
 
     def run(self):
         self.root.mainloop()
