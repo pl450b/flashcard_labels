@@ -1,17 +1,29 @@
 import tkinter as tk
 import pandas as pd
-import random
+
+# TODO: 
+# Finish comments
+# Clarify use of label_dict and label array, do I need both?
+# Add score system
 
 class FlashcardGUI:
-    def __init__(self, dataframe, label_array):
-        self.full_dataframe = dataframe
+    def __init__(self, file_name):
+        # Two working dataframes for this project
+        self.full_dataframe = pd.read_csv(file_name, delimiter='|')
         self.deck_dataframe = pd.DataFrame(columns=['term', 'definition'])
-        self.current_card = 0
-        self.label_array = label_array
-        self.label_stat = []
-        self.prev_card = []
 
-        self.label_dict = {key: "grey" for key in label_array}
+        # Basic variable setup
+        self.current_card = 0
+        
+        # Make an array of all the labels in your deck
+        self.label_array = []
+        for i in self.full_dataframe["labels"]:
+            split_labels = i.split(",")
+            for j in split_labels:
+                if j not in self.label_array:
+                    self.label_array.append(j)
+
+        self.label_dict = {key: "grey" for key in self.label_array}
         print(self.label_dict)
 
         # Create the GUI window
