@@ -29,6 +29,7 @@ class FlashcardGUI:
         # Create the GUI window
         self.root = tk.Tk()
         self.root.title("Flashcards")
+        self.root.bind('<KeyPress>', self.key_press)
         # Set the default window size
         window_width = 800
         window_height = 600
@@ -135,6 +136,14 @@ class FlashcardGUI:
 
     def leave_button(self, event):
         pass
+
+    def key_press(self, event):
+        if event.keysym == 'Left':
+            self.prev_card()
+        elif event.keysym == 'Right':
+            self.next_card()
+        elif event.keysym == 'Down':
+            self.show_answer()
 
     def run(self):
         self.root.mainloop()
