@@ -4,7 +4,8 @@ import random
 
 class FlashcardGUI:
     def __init__(self, dataframe, label_array):
-        self.dataframe = dataframe
+        self.full_dataframe = dataframe
+        self.deck_dataframe = pd.DataFrame(columns=['term', 'definition'])
         self.current_card = 0
         self.label_array = label_array
         self.label_stat = []
@@ -51,10 +52,16 @@ class FlashcardGUI:
         self.prev_card_button.pack(side=tk.LEFT, padx=30)
 
     def get_current_question(self):
-        return self.dataframe.iloc[self.current_card]['definition']     
+        if self.deck_dataframe.size == 0:
+            return "No cards in current deck"
+        else:
+            return self.deck_dataframe.iloc[self.current_card]['definition']     
 
     def get_current_answer(self):
-        return self.dataframe.iloc[self.current_card]['term']
+        if self.deck_dataframe.size == 0:
+            return "No cards in current deck"
+        else:
+            return self.deck_dataframe.iloc[self.current_card]['term']
 
     def show_answer(self):
         answer = self.get_current_answer()
@@ -75,30 +82,48 @@ class FlashcardGUI:
         self.answer_label.config(text="", state=tk.DISABLED)
 
     def inc_card(self):
-        self.current_card = (random.randint(0,len(self.dataframe) - 1))
-        self.prev_card.append(self.current_card)
-
-    def dec_card(self):
-        if(len(self.prev_card) != 0):
-            self.current_card = self.prev_card.pop()
-            print(self.prev_card)
+        if self.current_card == len(self.deck_dataframe) - 1:
+            self.current_card = 0
         else:
-            print("Test")
+            self.current_card += 1
+        
+    def dec_card(self):
+        if self.current_card == 0:
+            self.current_card = len(self.deck_dataframe) - 1
+        else:
+            self.current_card -= 1
 
-
+    # Runs every time a label is pressed in the GUI. This changes the color of the label and it's 
+    # status in the lable dictionary. The current deck dataframe is also updated with each change
     def toggle_label(self, label):
+        # Label dictionary update
         if(self.label_dict[label] == "grey"):
-            self.label_dict[label] = "blue"
+            self.label_dict[label] = "green"
 
-        elif(self.label_dict[label] == "blue"):
+        elif(self.label_dict[label] == "red"):
             self.label_dict[label] = "green"
         
         elif(self.label_dict[label] == "green"):
             self.label_dict[label] = "grey"      
-    
+
+        # Label button color update
         for button in self.root.winfo_children():
             if button.cget('text') == label:
                 button.config(bg=self.label_dict[label])
+
+        # Deck dataframe update
+        self.deck_dataframe.drop(self.deck_dataframe.index, inplace=True)
+        deck_labels = []
+        for key in self.label_dict:
+            if(self.label_dict[key] == "green"):
+                deck_labels.append(key)
+
+        in_deck = self.full_dataframe['labels'].str.contains('|'.join(deck_labels))
+        self.deck_dataframe['term'] = self.full_dataframe.loc[in_deck, 'term']
+        self.deck_dataframe['definition'] = self.full_dataframe.loc[in_deck, 'definition']
+        
+        # Randomize deck
+        # self.deck_dataframe = self.deck_dataframe.sample(frac=1, replace=False)
 
     def enter_button(self, event):
         pass
