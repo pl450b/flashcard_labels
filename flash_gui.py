@@ -5,6 +5,7 @@ import pandas as pd
 # Finish comments
 # Clarify use of label_dict and label array, do I need both?
 # Add score system
+#   scores start at 0.5, change by abs(0.5-current_score)/2
 
 class FlashcardGUI:
     def __init__(self, file_name):
@@ -36,30 +37,30 @@ class FlashcardGUI:
         self.root.geometry(f"{window_width}x{window_height}")
 
         # Display the flashcard question
-        self.question_label = tk.Label(self.root, text=self.get_current_question(), wraplength=300)
+        self.question_label = tk.Label(self.root, text=self.get_current_question(), wraplength=300, font=("Arial", 16))
         self.question_label.pack(pady=20)
 
         # show card labels
         for i in self.label_array:
-            self.button = tk.Button(self.root, text=i, command=lambda label=i: self.toggle_label(label))
+            self.button = tk.Button(self.root, text=i, command=lambda label=i: self.toggle_label(label), font=("Arial", 16))
             self.button.bind('<Enter>', self.enter_button)
             self.button.bind('<Leave>', self.leave_button)
             self.button.pack(anchor=tk.W)
 
         # Create a button to show the answer
-        self.show_answer_button = tk.Button(self.root, text="Show Answer", command=self.show_answer)
+        self.show_answer_button = tk.Button(self.root, text="Show Answer", command=self.show_answer, font=("Arial", 16))
         self.show_answer_button.pack(pady=10)
 
         # Display the flashcard answer (hidden by default)
-        self.answer_label = tk.Label(self.root, text="", wraplength=300)
+        self.answer_label = tk.Label(self.root, text="", wraplength=300, font=("Arial", 16))
         self.answer_label.pack(pady=20)
         self.answer_label.config(state=tk.DISABLED)
 
         # Create a button to go to the next flashcard
-        self.next_card_button = tk.Button(self.root, text="Next Card", command=self.next_card)
+        self.next_card_button = tk.Button(self.root, text="Next Card", command=self.next_card, font=("Arial", 16))
         self.next_card_button.pack(side=tk.RIGHT, padx=30)
 
-        self.prev_card_button = tk.Button(self.root, text="Prevous Card", command=self.prev_card)
+        self.prev_card_button = tk.Button(self.root, text="Prevous Card", command=self.prev_card, font=("Arial", 16))
         self.prev_card_button.pack(side=tk.LEFT, padx=30)
 
     def get_current_question(self):
@@ -76,7 +77,7 @@ class FlashcardGUI:
 
     def show_answer(self):
         answer = self.get_current_answer()
-        self.answer_label.config(text=answer, state=tk.NORMAL, font=("Arial", 16))
+        self.answer_label.config(text=answer, state=tk.NORMAL)
 
     def next_card(self):
         # Increment card
@@ -85,7 +86,7 @@ class FlashcardGUI:
         else:
             self.current_card += 1
 
-        self.question_label.config(text=self.get_current_question(), font=("Arial", 16))
+        self.question_label.config(text=self.get_current_question())
         self.answer_label.config(text="", state=tk.DISABLED)
     
     # Fix later
@@ -96,7 +97,7 @@ class FlashcardGUI:
         else:
             self.current_card -= 1
 
-        self.question_label.config(text=self.get_current_question(), font=("Arial", 16))
+        self.question_label.config(text=self.get_current_question())
         self.answer_label.config(text="", state=tk.DISABLED)        
 
     # Runs every time a label is pressed in the GUI. This changes the color of the label and it's 
@@ -137,6 +138,16 @@ class FlashcardGUI:
     def leave_button(self, event):
         pass
 
+    def inc_score(self, event):
+        cur_term = self.get_current_answer()
+        old_score = self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency']
+        new_score = old_score + abs(1-old_score)/2
+
+    def dec_score(self, event):
+        cur_term = self.get_current_answer()
+        old_score = self.full_dataframe.loc[self.full_dataframe['term'] == cur_term, 'proficiency']
+        new_score = old_score - abs(1-old_score)/2
+
     def key_press(self, event):
         if event.keysym == 'Left':
             self.prev_card()
@@ -144,6 +155,10 @@ class FlashcardGUI:
             self.next_card()
         elif event.keysym == 'Down':
             self.show_answer()
+        elif event.keysym == 'x':
+            self.inc_score()
+        elif event.keysym == 'c':
+            self.dec_score()
 
     def run(self):
         self.root.mainloop()

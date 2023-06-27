@@ -1,85 +1,122 @@
-term|definition|labels|proficiency 
-Confidentiality|Privacy,only those who need the data can see the data|Module 1|
-Integrity|Data is not changed in transit or by unauthorized individuals|Module 1|
-Availability|Those who do need to use data can and easily|Module 1|
-FTP|21, Used to transfer files between a client and a server.|Ports and Protocols, Module 2|
-SSH|22, Used to establish a secure connection between two computers.|Ports and Protocols, Module 2|
-FTPS|989, 990, Secure FTP using TLS|Ports and Protocols, Module 2|
-SSH|22, Used to establish a secure connection between two computers.|Ports and Protocols, Module 2|
-Telnet|23, Used to establish a text-based connection between two computers. (insecure)|Ports and Protocols, Module 2|
-SMTP|25, Used to send email messages.|Ports and Protocols, Module 2|
-DNS|53, Used to translate domain names into IP addresses.|Ports and Protocols, Module 2|
-DHCP|67, Used to assign IP addresses to devices on a network.|Ports and Protocols, Module 2|
-TFTP|69, Used to transfer files between a client and a server.|Ports and Protocols, Module 2|
-HTTP|80, Used to transfer data between a web server and a web browser.|Ports and Protocols, Module 2|
-POP|110 (995 for 3S), Used to retrieve email messages from a mail server.|Ports and Protocols, Module 2|
-NTP|123, Used to synchronize clocks on a network.|Ports and Protocols, Module 2|
-IMAP|143, 993, Used to retrieve email messages from a mail server and manage them on the server. (Alternative to POP)|Ports and Protocols, Module 2|
-SNMP|161, 162, Used to manage network devices.|Ports and Protocols, Module 2|
-LDAP|389, (636 - secure)	Lightweight Directory Access Protocol. Hierarchical structure for directory services (like active directory)|Ports and Protocols, Module 2|
-HTTPS|443, Used to transfer data between a web server and a web browser securely.|Ports and Protocols, Module 2|
-SSL|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|
-TLSv1.2	|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|
-TLSv1.3	|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|
-QUIC|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|
-SMTPS|465, Used to send email messages securely.|Ports and Protocols, Module 2|
-RTSP|554, Used to control streaming media.|Ports and Protocols, Module 2|
-IMAPS|993, Used to retrieve email messages securely from a mail server and manage them on the server.	|Ports and Protocols, Module 2|
-SIP|5060, Used to make and receive voice calls over IP.|Ports and Protocols, Module 2|
-TLS|465, 995, 993, Used to encrypt data in transit.|Ports and Protocols, Module 2|
-IPSec|50, 51, Used to encrypt data in transit.|Ports and Protocols, Module 2|
-RADIUS|1812, 1813, Remote clients get central point of authentication, so they can connect from anywhere|Ports and Protocols, Module 2|
-RDP|3389, Gives user a graphical interface to interact with computer over network|Ports and Protocols, Module 2|
-Kerberos|88, Network authentication protocol that allows for communication over a non-secure network|Ports and Protocols, Module 2|
-Diameter|3868, Upgrade to radius|Ports and Protocols, Module 2|
-SRTP|5004, Secure Real Time Protocol, replace RTP, used to stream audio/video using UDP|Ports and Protocols, Module 2|
-SFTP|22, Secure FTP using ssh|Ports and Protocols, Module 2|
-Virus|A type of malware that can replicate itself and spread from one computer to another. Needs host file (usually)|Module 1, Attacks|
-Worm|A type of malware that can spread without the need for a host file.|Module 1, Attacks|
-Trojan|A type of malware that disguises itself as legitimate software in order to trick users into installing it.|Module 1, Attacks|
-Keylogger|A type of malware that records every keystroke that a user makes.|Module 1, Attacks|
-Spyware|A type of malware that collects information about a user's activities, such as their browsing history and passwords.|Module 1, Attacks|
-Backdoor|A type of malware that allows an attacker to gain unauthorized access to a computer system.|Module 1, Attacks|
-Ransomware|A type of malware that encrypts a user's files and demands a ransom payment in order to decrypt them.|Module 1, Attacks|
-Crypto Malware|Program that secretly performs crypto mining in the background|Module 1, Attacks|
-Bot|A type of malware that can take control of a computer and make it perform tasks without the user's knowledge or consent.|Module 1, Attacks|
-Botnet|A network of infected computers that are controlled by a bot. Botnets can be used to carry out a variety of malicious activities, such as sending spam, launching denial-of-service attacks, and stealing data.|Module 1, Attacks|
-Rookit|A type of malware that is designed to steal data from a computer. Rookits are often disguised as legitimate software, such as games or productivity tools.|Module 1, Attacks|
-Time bomb|A type of malware that is activated at a predetermined time or event. Time bombs are often used to destroy data or disrupt computer operations.|Module 1, Attacks|
-Logic bomb|A type of malware that is activated when a specific condition is met. Logic bombs are often used to steal data or disrupt computer operations.|Module 1, Attacks|
-Spear phishing|Targeted phishing|Module 1, Social Engineering|
-Whaling|Spear phishing when target is senior leadership|Module 1, Social Engineering|
-Vishing|VOIP phishing|Module 1, Social Engineering|
-Smishing|SMS phishing|Module 1, Social Engineering|
-SPIM|Spam instant messaging|Module 1, Social Engineering|
-Bluejacking|Spam over Bluetooth|Module 1, Social Engineering|
-Prepending|"Adding info to message to make it look legit (e.g., ""Re:"" in subject line)"|Module 1, Social Engineering|
-Pretexting|An attacker presents a fabrication of a legitimate reason they would need access to a system or resource even though they’ve not been granted access|Module 1, Social Engineering|
-Identity Fraud|Using information (often obtained through social engineering attacks) to present oneself as another. Loans and even mortgages are often fraudulently obtained through this means|Module 1, Social Engineering|
-Invoice Scams|Sending invoices purporting to be from legitimate companies in hopes that they will be paid without further investigation|Module 1, Social Engineering|
-Hoaxes|Chain letters, promises of financial gain, and other deceptive messages|Module 1, Social Engineering|
-Pharming|User traffic redirected by attacker to look-alike sites that are actually malicious|Module 1, Social Engineering|
-Typosquatting|Websites that look like a trusted site, but are actually malicious|Module 1, Social Engineering|
-Dictionary Attack|Brute force attack using combinations of words from a document|Module 1, Attacks|
-Rainbow Table|Table of hashes of common passwords|Module 1, Attacks|
-SQL Injection|Manipulating or extracting data, bypassing security measures, unauthorized actions|Module 1, Attacks|
-DLL Injection|Injecting code into a running process, modifying program behavior|Module 1, Attacks|
-LDAP Injection|Manipulating queries, bypassing authentication mechanisms, unauthorized access|Module 1, Attacks|
-XML Injection|Unexpected behavior, security vulnerabilities, code execution, data tampering|Module 1, Attacks|
-Collision Attacks|Trying to find some input that generates the same hash, but actual inputs might be different|Module 1, Attacks|
-Birthday Attack|Same as collision attack|Module 1, Attacks|
-Downgrade attack|Attacker requests server to use older services/protocols to that may have vulnerabilities.|Module 1, Attacks|
-XSS|Exploiting vulnerabilities to inject and execute malicious scripts|Module 1, Attacks|
-XSRF|Forging unauthorized actions by exploiting user's trust, user clicks on bad link that send data back to attacker|Module 1, Attacks|
-Timing Attacks|Exploiting variations in response times to gather information|Module 1, Attacks|
-Buffer Overflows|Overwriting adjacent memory locations or exceeding integer limits|Module 1, Attacks|
-Memory Leaks|Unintentional retention of allocated memory, potentially leading to resource exhaustion or information exposure|Module 1, Attacks|
-XSS: Persistent|Malisous script in website gets user’s cookies to attacker|Module 1, Attacks|
-XSS: Reflective|Attacker sends link with malicious script in it, which reflects cookies off user to attacker|Module 1, Attacks|
-Replay Attack|Passwords or session that have be captured and then used later (without change)|Module 1, Attacks, Wireless|
-Bluejacking|Sending unsolicited messages over Bluetooth (spamming)|Module 1, Attacks, Wireless|
-Bluesnarfing|Unauthorized access to a Bluetooth device|Module 1, Attacks, Wireless|
-Bluebugging|Exploiting a serial connection to gain full control of transmitted data|Module 1, Attacks|
-Spoofing|Copying identifing features of a device (IP, MAC, etc) to impersonate victum |Module 1, Attacks|
-Elasticity|Automatically adjusting resource utilization based on performance needs|Module 1, Attacks|
-Scalability |The ability to add/remove hardware/software resources for different usage levels|Module 1, Attacks|
+term|definition|labels|proficiency
+Confidentiality|Privacy,only those who need the data can see the data|Module 1|0.5
+Integrity|Data is not changed in transit or by unauthorized individuals|Module 1|0.5
+Availability|Those who do need to use data can and easily|Module 1|0.5
+FTP|21, Used to transfer files between a client and a server.|Ports and Protocols, Module 2|0.5
+SSH|22, Used to establish a secure connection between two computers.|Ports and Protocols, Module 2|0.5
+FTPS|989, 990, Secure FTP using TLS|Ports and Protocols, Module 2|0.5
+SSH|22, Used to establish a secure connection between two computers.|Ports and Protocols, Module 2|0.5
+Telnet|23, Used to establish a text-based connection between two computers. (insecure)|Ports and Protocols, Module 2|0.5
+SMTP|25, Used to send email messages.|Ports and Protocols, Module 2|0.5
+DNS|53, Used to translate domain names into IP addresses.|Ports and Protocols, Module 2|0.5
+DHCP|67, Used to assign IP addresses to devices on a network.|Ports and Protocols, Module 2|0.5
+TFTP|69, Used to transfer files between a client and a server.|Ports and Protocols, Module 2|0.5
+HTTP|80, Used to transfer data between a web server and a web browser.|Ports and Protocols, Module 2|0.5
+POP|110 (995 for 3S), Used to retrieve email messages from a mail server.|Ports and Protocols, Module 2|0.5
+NTP|123, Used to synchronize clocks on a network.|Ports and Protocols, Module 2|0.5
+IMAP|143, 993, Used to retrieve email messages from a mail server and manage them on the server. (Alternative to POP)|Ports and Protocols, Module 2|0.5
+SNMP|161, 162, Used to manage network devices.|Ports and Protocols, Module 2|0.5
+LDAP|389, (636 - secure)	Lightweight Directory Access Protocol. Hierarchical structure for directory services (like active directory)|Ports and Protocols, Module 2|0.5
+HTTPS|443, Used to transfer data between a web server and a web browser securely.|Ports and Protocols, Module 2|0.5
+SSL|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|0.5
+TLSv1.2	|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|0.5
+TLSv1.3	|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|0.5
+QUIC|443, Used to encrypt data in transit.|Ports and Protocols, Module 2|0.5
+SMTPS|465, Used to send email messages securely.|Ports and Protocols, Module 2|0.5
+RTSP|554, Used to control streaming media.|Ports and Protocols, Module 2|0.5
+IMAPS|993, Used to retrieve email messages securely from a mail server and manage them on the server.	|Ports and Protocols, Module 2|0.5
+SIP|5060, Used to make and receive voice calls over IP.|Ports and Protocols, Module 2|0.5
+TLS|465, 995, 993, Used to encrypt data in transit.|Ports and Protocols, Module 2|0.5
+IPSec|50, 51, Used to encrypt data in transit.|Ports and Protocols, Module 2|0.5
+RADIUS|1812, 1813, Remote clients get central point of authentication, so they can connect from anywhere|Ports and Protocols, Module 2|0.5
+RDP|3389, Gives user a graphical interface to interact with computer over network|Ports and Protocols, Module 2|0.5
+Kerberos|88, Network authentication protocol that allows for communication over a non-secure network|Ports and Protocols, Module 2|0.5
+Diameter|3868, Upgrade to radius|Ports and Protocols, Module 2|0.5
+SRTP|5004, Secure Real Time Protocol, replace RTP, used to stream audio/video using UDP|Ports and Protocols, Module 2|0.5
+SFTP|22, Secure FTP using ssh|Ports and Protocols, Module 2|0.5
+Virus|A type of malware that can replicate itself and spread from one computer to another. Needs host file (usually)|Module 1, Attacks|0.5
+Worm|A type of malware that can spread without the need for a host file.|Module 1, Attacks|0.5
+Trojan|A type of malware that disguises itself as legitimate software in order to trick users into installing it.|Module 1, Attacks|0.5
+Keylogger|A type of malware that records every keystroke that a user makes.|Module 1, Attacks|0.5
+Spyware|A type of malware that collects information about a user's activities, such as their browsing history and passwords.|Module 1, Attacks|0.5
+Backdoor|A type of malware that allows an attacker to gain unauthorized access to a computer system.|Module 1, Attacks|0.5
+Ransomware|A type of malware that encrypts a user's files and demands a ransom payment in order to decrypt them.|Module 1, Attacks|0.5
+Crypto Malware|Program that secretly performs crypto mining in the background|Module 1, Attacks|0.5
+Bot|A type of malware that can take control of a computer and make it perform tasks without the user's knowledge or consent.|Module 1, Attacks|0.5
+Botnet|A network of infected computers that are controlled by a bot. Botnets can be used to carry out a variety of malicious activities, such as sending spam, launching denial-of-service attacks, and stealing data.|Module 1, Attacks|0.5
+Rookit|A type of malware that is designed to steal data from a computer. Rookits are often disguised as legitimate software, such as games or productivity tools.|Module 1, Attacks|0.5
+Time bomb|A type of malware that is activated at a predetermined time or event. Time bombs are often used to destroy data or disrupt computer operations.|Module 1, Attacks|0.5
+Logic bomb|A type of malware that is activated when a specific condition is met. Logic bombs are often used to steal data or disrupt computer operations.|Module 1, Attacks|0.5
+Spear phishing|Targeted phishing|Module 1, Social Engineering|0.5
+Whaling|Spear phishing when target is senior leadership|Module 1, Social Engineering|0.5
+Vishing|VOIP phishing|Module 1, Social Engineering|0.5
+Smishing|SMS phishing|Module 1, Social Engineering|0.5
+SPIM|Spam instant messaging|Module 1, Social Engineering|0.5
+Bluejacking|Spam over Bluetooth|Module 1, Social Engineering|0.5
+Prepending|"Adding info to message to make it look legit (e.g., ""Re:"" in subject line)"|Module 1, Social Engineering|0.5
+Pretexting|An attacker presents a fabrication of a legitimate reason they would need access to a system or resource even though they’ve not been granted access|Module 1, Social Engineering|0.5
+Identity Fraud|Using information (often obtained through social engineering attacks) to present oneself as another. Loans and even mortgages are often fraudulently obtained through this means|Module 1, Social Engineering|0.5
+Invoice Scams|Sending invoices purporting to be from legitimate companies in hopes that they will be paid without further investigation|Module 1, Social Engineering|0.5
+Hoaxes|Chain letters, promises of financial gain, and other deceptive messages|Module 1, Social Engineering|0.5
+Pharming|User traffic redirected by attacker to look-alike sites that are actually malicious|Module 1, Social Engineering|0.5
+Typosquatting|Websites that look like a trusted site, but are actually malicious|Module 1, Social Engineering|0.5
+Dictionary Attack|Brute force attack using combinations of words from a document|Module 1, Attacks|0.5
+Rainbow Table|Table of hashes of common passwords|Module 1, Attacks|0.5
+SQL Injection|Manipulating or extracting data, bypassing security measures, unauthorized actions|Module 1, Attacks|0.5
+DLL Injection|Injecting code into a running process, modifying program behavior|Module 1, Attacks|0.5
+LDAP Injection|Manipulating queries, bypassing authentication mechanisms, unauthorized access|Module 1, Attacks|0.5
+XML Injection|Unexpected behavior, security vulnerabilities, code execution, data tampering|Module 1, Attacks|0.5
+Collision Attacks|Trying to find some input that generates the same hash, but actual inputs might be different|Module 1, Attacks|0.5
+Birthday Attack|Same as collision attack|Module 1, Attacks|0.5
+Downgrade attack|Attacker requests server to use older services/protocols to that may have vulnerabilities.|Module 1, Attacks|0.5
+XSS|Exploiting vulnerabilities to inject and execute malicious scripts|Module 1, Attacks|0.5
+XSRF|Forging unauthorized actions by exploiting user's trust, user clicks on bad link that send data back to attacker|Module 1, Attacks|0.5
+Timing Attacks|Exploiting variations in response times to gather information|Module 1, Attacks|0.5
+Buffer Overflows|Overwriting adjacent memory locations or exceeding integer limits|Module 1, Attacks|0.5
+Memory Leaks|Unintentional retention of allocated memory, potentially leading to resource exhaustion or information exposure|Module 1, Attacks|0.5
+XSS: Persistent|Malisous script in website gets user’s cookies to attacker|Module 1, Attacks|0.5
+XSS: Reflective|Attacker sends link with malicious script in it, which reflects cookies off user to attacker|Module 1, Attacks|0.5
+Replay Attack|Passwords or session that have be captured and then used later (without change)|Module 1, Attacks, Wireless|0.5
+Bluejacking|Sending unsolicited messages over Bluetooth (spamming)|Module 1, Attacks, Wireless|0.5
+Bluesnarfing|Unauthorized access to a Bluetooth device|Module 1, Attacks, Wireless|0.5
+Bluebugging|Exploiting a serial connection to gain full control of transmitted data|Module 1, Attacks|0.5
+Spoofing|Copying identifing features of a device (IP, MAC, etc) to impersonate victum |Module 1, Attacks|0.5
+Elasticity|Automatically adjusting resource utilization based on performance needs|Module 1, Attacks|0.5
+Scalability |The ability to add/remove hardware/software resources for different usage levels|Module 1, Attacks|0.5
+ARP Poisoning |Non-legit device on network messaging victum’s computer, telling them another device’s IP and their MAC|Module 1, Attacks, Networks|0.5
+On-path network attack|Also man-in-the-middle, device|Module 1, Attacks|0.5
+Physical Layer (Cables, NIC)|OSI Layer 1|Module 1, Networks|0.5
+Data Link Layer (Ethernet, Switches) by MAC|OSI Layer 2|Module 1, Networks|0.5
+Network Layer (IP, Routers) by IP|OSI Layer 3|Module 1, Networks|0.5
+Transport Layer (TCP, UDP)|OSI Layer 4|Module 1, Networks|0.5
+Session Layer (HTTP, FTP, SMTP)|OSI Layer 5|Module 1, Networks|0.5
+Presentation Layer (HTTP, FTP, SMTP)|OSI Layer 6|Module 1, Networks|0.5
+Application Layer (HTTP, FTP, SMTP)|OSI Layer 7|Module 1, Networks|0.5
+Segment|Internet transmission data with TCP added|Module 1, Networks|0.5
+Packet|Internet transmission data with TCP + IP|Module 1, Networks|0.5
+Frame|Internet transmission with TCP + IP + Data link|Module 1, Networks|0.5
+TCP|Connection oriented protocol (needs session), delivery guaranteed  |Module 1, Networks|0.5
+UDP|Connection oriented protocol (does not needs session), delivery not guaranteed|Module 1, Networks|0.5
+Rouge Access Point|Attacker sets up an access point with similar name to another network|Module 1, Attacks|0.5
+Evil Twin|Attacker sets up an access point with the same SSID as another network|Module 1, Attacks|0.5
+DNS Rogue Infrastructure|A DNS attack where an attacker sets up unauthorized DNS servers to redirect legitimate network traffic to malicious destinations.|Module 1, Attacks|0.5
+DNS Poisoning|A DNS attack where an attacker corrupts or modifies DNS cache records, leading to the redirection of network traffic to unintended or malicious IP addresses.|Module 1, Attacks|0.5
+DNS Pharming|A DNS attack where an attacker compromises a DNS server or manipulates the DNS resolution process to redirect users to fraudulent websites without their knowledge or consent.|Module 1, Attacks|0.5
+DNS Hosts file|A local file on a computer or device that maps IP addresses to domain names, often used to override DNS resolution and redirect network traffic to specific destinations.|Module 1, Attacks|0.5
+Non-Credentialed scan|Vuln Scan Mode: A scan that does not access systems as authenticated users, allowing for faster scanning but providing less thorough results.|Module 1, Vulnerabilities and Threats|0.5
+Credentialed scan|Vuln Scan Mode: A scan that utilizes login information to access systems and identify vulnerabilities, providing more comprehensive results.|Module 1, Vulnerabilities and Threats|0.5
+Agent/Agentless Scan|Vuln Scan Mode: Determines whether the scanner is centralized in one location (agent-based) or distributed across multiple devices (agentless).|Module 1, Vulnerabilities and Threats |0.5
+Intrusive Scan|Vuln Scan Mode: A scan that attempts to exploit found vulnerabilities, often utilized in penetration testing but not typically configured in this manner.|Module 1, Vulnerabilities and Threats |0.5
+Vulnerability Scanner|What are these: Microsoft Baseline Security Analyzer (MBSA), Nikto, Nessus|Module 1, Vulnerabilities and Threats |0.5
+NO!! Firewalls and switches (or anything with firmware) too|Does patch management apply to just operating systems??|Module 1, Vulnerabilities and Threats  |0.5
+Syslog|A standard network-based logging protocol that works on a wide variety of different types of devices and applications, allowing them to send text- formatted log messages to a central server|Module 1, Vulnerabilities and Threats  |0.5
+SIEMs, Security Information and Event Managers|Systems that enable the centralization, correlation, and retention of event data in order to generate automated alerts. Typically, provides a dashboard interface that highlights possible security incidents. Also useful for forecasting and trend analysis|Module 1, Vulnerabilities and Threats  |0.5
+UTMS, Unified Threat Management System|All-in-one device for firewall, proxy, NAT/PAT, web filtering, etc|Module 1, Vulnerabilities and Threats  |0.5
+Honeypot|Intentionally vulnerable system, sacrificial lamb, to DETECT possible attacker|Module 1, Vulnerabilities and Threats  |0.5
+Strategic intelligence|Non-technical, high-level information that can be used by senior management to make security decisions.|Module 1, Threat Intel|0.5
+Open-source intelligence|Intelligence gathered from publicly available sources, such as news articles, social media, and online publications.|Module 1, Threat Intel|0.5
+Closed-source/proprietary intelligence|Intelligence obtained from confidential or restricted sources, typically not publicly accessible.|Module 1, Threat Intel|0.5
+Operational intelligence|Intelligence that focuses on adversaries and their actions, providing insights to support operational security efforts.|Module 1, Threat Intel|0.5
+Tactical intelligence|Intelligence that focuses on immediate, specific threats and the evidence that can be used to detect and respond to them swiftly.|Module 1, Threat Intel|0.5
+Counterintelligence|An active security strategy that uses intelligence offensively to detect, prevent, and neutralize hostile intelligence activities.|Module 1, Threat Intel|0.5
+Computer Emergency Response Team (CERT), Information Sharing and Analysis Center (ISAC), MITRE|Three big threat intel organizations|Module 1, Threat Intel|0.5
