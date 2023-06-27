@@ -19,7 +19,7 @@ class FlashcardGUI:
         self.label_array = []
         label_list = self.full_dataframe["labels"]
         for i in label_list:
-            split_labels = str(i).split(",")
+            split_labels = str(i).split(", ")
             for j in split_labels:
                 if j not in self.label_array:
                     self.label_array.append(j)
@@ -129,8 +129,6 @@ class FlashcardGUI:
         
         # Randomize deck
         self.deck_dataframe = self.deck_dataframe.sample(frac=1, replace=False)
-
-        print(self.current_card)
 
     def enter_button(self, event):
         pass

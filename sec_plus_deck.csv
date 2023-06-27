@@ -83,23 +83,3 @@ Bluebugging|Exploiting a serial connection to gain full control of transmitted d
 Spoofing|Copying identifing features of a device (IP, MAC, etc) to impersonate victum |Module 1, Attacks|
 Elasticity|Automatically adjusting resource utilization based on performance needs|Module 1, Attacks|
 Scalability |The ability to add/remove hardware/software resources for different usage levels|Module 1, Attacks|
-ARP Poisoning |Non-legit device on network messaging victum’s computer, telling them another device’s IP and their MAC|Module 1, Attacks, Networks|
-On-path network attack|Also man-in-the-middle, device|Module 1, Attacks|
-Physical Layer (Cables, NIC)|OSI Layer 1|Module 1, Networks|
-Data Link Layer (Ethernet, Switches) by MAC|OSI Layer 2|Module 1, Networks|
-Network Layer (IP, Routers) by IP|OSI Layer 3|Module 1, Networks|
-Transport Layer (TCP, UDP)|OSI Layer 4|Module 1, Networks|
-Session Layer (HTTP, FTP, SMTP)|OSI Layer 5|Module 1, Networks|
-Presentation Layer (HTTP, FTP, SMTP)|OSI Layer 6|Module 1, Networks|
-Application Layer (HTTP, FTP, SMTP)|OSI Layer 7|Module 1, Networks|
-Segment|Internet transmission data with TCP added|Module 1, Networks|
-Packet|Internet transmission data with TCP + IP|Module 1, Networks|
-Frame|Internet transmission with TCP + IP + Data link|Module 1, Networks|
-TCP|Connection oriented protocol (needs session), delivery guaranteed  |Module 1, Networks|
-UDP|Connection oriented protocol (does not needs session), delivery not guaranteed|Module 1, Networks|
-Rouge Access Point|Attacker sets up an access point with similar name to another network|Module 1, Attacks|
-Evil Twin|Attacker sets up an access point with the same SSID as another network|Module 1, Attacks|
-DNS Rogue Infrastructure|A DNS attack where an attacker sets up unauthorized DNS servers to redirect legitimate network traffic to malicious destinations.|Module 1, Attacks|
-DNS Poisoning|A DNS attack where an attacker corrupts or modifies DNS cache records, leading to the redirection of network traffic to unintended or malicious IP addresses.|Module 1, Attacks|
-DNS Pharming|A DNS attack where an attacker compromises a DNS server or manipulates the DNS resolution process to redirect users to fraudulent websites without their knowledge or consent.|Module 1, Attacks|
-DNS Hosts file|A local file on a computer or device that maps IP addresses to domain names, often used to override DNS resolution and redirect network traffic to specific destinations.|Module 1, Attacks|
