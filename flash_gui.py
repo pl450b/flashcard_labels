@@ -4,8 +4,7 @@ import pandas as pd
 # TODO: 
 # Finish comments
 # Clarify use of label_dict and label array, do I need both?
-# Add score system
-#   scores start at 0.5, change by abs(0.5-current_score)/2
+
 
 class FlashcardGUI:
     def __init__(self, file_name):
