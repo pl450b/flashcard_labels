@@ -1,5 +1,5 @@
 # Welcome to Wesley's Flashcards Tool!
-This is a fun tool for practicing and organizing you own flashcards deck
+This is a fun tool for practicing and organizing your own flashcards deck
 
 Once running, click the label buttons on the left side to select the cards you want to appear
 in your current study session. Everytime you select/deselect a label, the current deck is updated and
@@ -8,7 +8,7 @@ randomized.
 Next Card: right arrow\
 Previous Card: left arrow\
 Show Answer: Down arrow
-## Instalation
+## Installation
 1. Clone the direction using ```git clone https://github.com/pl450b/smart_flashcards```
 2. Install required packages using ```pip install -r requirements.txt```
 3. Now just put your flashcard CSV into this directory and you are ready to go!
